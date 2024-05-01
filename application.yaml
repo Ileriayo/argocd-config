@@ -12,7 +12,7 @@ spec:
     path: .
     targetRevision: HEAD
   destination:
-    name: https://kubernetes.default.sv
+    name: https://kubernetes.default.svc
     namespace: default
   syncPolicy:
     automated:

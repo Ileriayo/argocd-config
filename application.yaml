@@ -1,6 +1,9 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: app=293503039498.dkr.ecr.eu-central-1.amazonaws.com/argocd-testapp
+    argocd-image-updater.argoproj.io/app.update-strategy: digest
   name: argocd-testapp
   namespace: default
   finalizers:

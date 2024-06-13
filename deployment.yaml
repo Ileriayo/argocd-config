@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-testapp
+  # annotations:
+  #   argocd-image-updater.argoproj.io/app.update-strategy: digest
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: argocd-testapp
+  template:
+    metadata:
+      labels:
+        app: argocd-testapp
+    spec:
+      containers:
+        - name: argocd-testapp
+          image: argocd-testapp
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80

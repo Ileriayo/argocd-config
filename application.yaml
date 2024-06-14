@@ -5,17 +5,17 @@ metadata:
     argocd-image-updater.argoproj.io/image-list: app=293503039498.dkr.ecr.eu-central-1.amazonaws.com/argocd-testapp
     argocd-image-updater.argoproj.io/app.update-strategy: digest
   name: argocd-testapp
-  namespace: default
+  namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
     repoURL: https://github.com/Ileriayo/argocd-config.git
-    path: https://github.com/nahmii/argocd-testapp
+    path: .
     targetRevision: HEAD
   destination:
-    name: https://kubernetes.default.svc
+    server: https://kubernetes.default.svc
     namespace: default
   syncPolicy:
     automated:

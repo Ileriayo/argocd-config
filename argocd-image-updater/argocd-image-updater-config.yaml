@@ -4,6 +4,6 @@ metadata:
   name: argocd-image-updater-config
 data:
   log.level: debug
-  extraArgs:
+  extraArgs: |
     - --interval
-    - 20s
+    - 10s
